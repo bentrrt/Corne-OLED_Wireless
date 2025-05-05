@@ -46,7 +46,7 @@
         };
 
         back-to-base {
-            bindings = <&lt 0 RETURN>;
+            bindings = <&to 0>;
             key-positions = <38 39>;
         };
     };
