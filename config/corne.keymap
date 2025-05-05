@@ -16,24 +16,33 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <41 40 39 38 37 27 28 29 36 37 1 2 3 4 5 13 14 15 16 17 26 25 24 12 0>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
             hold-trigger-on-release;
         };
 
-        HMR_R: HMR_R {
+        HML: HML {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR_R";
+            label = "HML";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <38 37 36 6 7 8 9 10 18 19 20 21 22 30 31 32 33 34 39 40 41 11 23 35>;
             hold-trigger-on-release;
+            hold-trigger-key-positions = <36 37 38 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        capslock {
+            bindings = <&HMR CAPSLOCK HOME>;
+            key-positions = <12 18>;
         };
     };
 
@@ -47,11 +56,12 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
+            display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL   &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+&HML DEL ESCAPE      &kp Q                &kp W            &kp E            &kp R  &kp T        &kp Y      &kp U      &kp I                 &kp O             &kp P                         &kp BSPC
+&HML LEFT_SHIFT DEL  &HML LEFT_CONTROL A  &HML LEFT_ALT S  &HML LEFT_WIN D  &kp F  &kp G        &kp H      &kp J      &HMR LEFT_GUI K       &HMR RIGHT_ALT L  &HMR RIGHT_CONTROL SEMICOLON  &kp SQT
+&kp BACKSLASH        &kp Z                &kp X            &kp C            &kp V  &kp B        &kp N      &kp M      &kp COMMA             &kp DOT           &kp FSLH                      &to 4
+                                                           &HML PLUS EQUAL  &mo 1  &kp SPACE    &kp ENTER  &lt 2 TAB  &HMR LS(MINUS) MINUS
             >;
         };
 
@@ -62,11 +72,12 @@
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
+            display-name = "Lower";
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&kp KP_MULTIPLY       &kp MINUS      &mt AMPERSAND N7          &mt ASTERISK N8       &mt LEFT_PARENTHESIS N9  &kp PLUS          &kp LS(LEFT_BRACKET)      &kp LS(RIGHT_BRACKET)  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp SLASH             &kp BACKSPACE  &mt DOLLAR NUMBER_4       &mt PERCENT N5        &mt CARET NUMBER_6       &kp ENTER         &kp LS(LC(LG(LEFT_ALT)))  &kp LEFT               &kp DOWN              &kp UP_ARROW           &kp RIGHT_ARROW   &kp DOLLAR
+&kp NON_US_BACKSLASH  &kp N0         &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3        &kp PERIOD        &kp LA(LS(MINUS))         &kp LS(LC(TAB))        &kp PAGE_DOWN         &kp PG_UP              &kp LC(TAB)       &kp TILDE
+                                                               &kp TILDE             &kp SPACE                &kp LEFT_SHIFT    &kp SPACE                 &kp LG(LS(LEFT))       &kp LS(LG(RIGHT))
             >;
         };
 
@@ -77,11 +88,12 @@
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
+            display-name = "Raise";
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6            &kp F7        &kp F8             &kp F9            &kp F10       &kp F11
+&trans   &trans  &trans  &trans  &trans  &trans    &trans            &kp C_PREV    &kp K_VOLUME_DOWN  &kp LS(K_VOL_UP)  &kp C_NEXT    &kp GRAVE
+&trans   &trans  &trans  &trans  &trans  &trans    &bt BT_SEL 0      &bt BT_SEL 1  &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4  &bt BT_CLR
+                         &trans  &trans  &trans    &kp C_PLAY_PAUSE  &trans        &kp C_MUTE
             >;
         };
 
@@ -96,10 +108,10 @@
 
         layer_4 {
             bindings = <
-&kp ESC    &kp Q         &kp W            &kp E            &kp R   &kp T     &kp Y   &kp U   &kp I   &kp O   &kp P   &trans
-&kp LSHFT  &HMR LCTRL A  &HMR LEFT_ALT S  &HMR LEFT_WIN D  &kp F   &kp G     &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL  &kp Z         &kp X            &kp C            &kp V   &kp B     &kp N   &kp M   &trans  &trans  &trans  &trans
-                                          &trans           &trans  &trans    &trans  &trans  &trans
+&kp ESC           &kp Q  &kp W  &kp E     &kp R   &kp T     &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&kp LEFT_SHIFT    &kp A  &kp S  &kp D     &kp F   &kp G     &kp H   &kp K   &kp J      &kp L    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V   &kp B     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp LS(QMARK)
+                                &kp FSLH  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
