@@ -84,10 +84,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp KP_MULTIPLY       &kp MINUS       &kp UP_ARROW              &kp END     &kp HOME            &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp NUMBER_7      &kp NUMBER_8       &kp N9        &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp SLASH             &kp LEFT_ARROW  &kp DOWN                  &kp RIGHT   &mt CARET NUMBER_6  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp NUMBER_4      &kp NUMBER_5       &kp NUMBER_6  &kp NUMBER_0      &kp DOLLAR
-&kp NON_US_BACKSLASH  &trans          &mt EXCLAMATION NUMBER_1  &kp K_COPY  &kp K_PASTE         &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3  &kp LC(TAB)       &kp TILDE
-                                                                &kp TILDE   &kp SPACE           &kp LEFT_SHIFT          &kp SPACE              &kp LG(LS(LEFT))  &kp LS(LG(RIGHT))
+&kp KP_MULTIPLY       &kp MINUS       &kp UP_ARROW              &kp END        &kp HOME            &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp NUMBER_7      &kp NUMBER_8       &kp N9        &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp SLASH             &kp LEFT_ARROW  &kp DOWN                  &kp RIGHT      &mt CARET NUMBER_6  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp NUMBER_4      &kp NUMBER_5       &kp NUMBER_6  &kp NUMBER_0      &kp DOLLAR
+&kp NON_US_BACKSLASH  &trans          &mt EXCLAMATION NUMBER_1  &kp C_AC_COPY  &kp C_AC_PASTE      &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3  &kp LC(TAB)       &kp TILDE
+                                                                &kp TILDE      &kp SPACE           &kp LEFT_SHIFT          &kp SPACE              &kp LG(LS(LEFT))  &kp LS(LG(RIGHT))
             >;
         };
 
