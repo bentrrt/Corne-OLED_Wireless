@@ -64,7 +64,7 @@
         char_ {
             bindings = <&kp UNDER>;
             key-positions = <8 9>;
-            require-prior-idle-ms = <20>;
+            require-prior-idle-ms = <19>;
         };
     };
 
