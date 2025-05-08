@@ -54,6 +54,18 @@
             bindings = <&kp ENTER>;
             key-positions = <19 20 21>;
         };
+
+        char- {
+            bindings = <&kp MINUS>;
+            key-positions = <2 3>;
+            require-prior-idle-ms = <5>;
+        };
+
+        char_ {
+            bindings = <&kp UNDER>;
+            key-positions = <8 9>;
+            require-prior-idle-ms = <20>;
+        };
     };
 
     keymap {
