@@ -66,6 +66,26 @@
             key-positions = <8 9>;
             require-prior-idle-ms = <19>;
         };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <14 15>;
+        };
+
+        lshiftpipe {
+            bindings = <&kp LS(BACKSLASH)>;
+            key-positions = <14 15 12>;
+        };
+
+        fowardslash {
+            bindings = <&kp SLASH>;
+            key-positions = <20 21>;
+        };
+
+        rishiftqstionmark {
+            bindings = <&kp LS(SLASH)>;
+            key-positions = <20 21 23>;
+        };
     };
 
     keymap {
